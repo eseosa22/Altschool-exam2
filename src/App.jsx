@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import reducer from './components/reducer'
@@ -6,6 +6,7 @@ import reducer from './components/reducer'
 function App() {
   const [count, dispatch] = useReducer(reducer, 0)
 
+  const [value, setValue] =  useState("")
   return (
     <div className="App">
       <div>
@@ -28,6 +29,13 @@ function App() {
         <button onClick={() => dispatch ({type: "reset"})}>
           Reset
         </button>
+        <input type="number" value={value} onChange={(e) => {
+          setValue(e.target.value)
+        }}/>
+        <button onClick={() => {
+          dispatch({type: "set", payload:+value})
+        }}>Set</button>
+
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
