@@ -15,12 +15,31 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-} 
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+}
+
+.container{
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
 nav {
   display: flex;
+  width: inherit;
+  height: 7vh;
   gap: 15px;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 2px 0 0  rgb(250, 248, 248);
   
-  /* margin: 15px; */
 }
 
 @keyframes logo-spin {
