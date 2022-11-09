@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link, useNavigate} from 'react-router-dom'
 import {ErrorBoundary} from 'react-error-boundary'
 import Home from "./components/Home"
 import './App.css'
@@ -11,9 +11,13 @@ import ErrorPage from './Errorpage'
 
 
 const App = () => {
+  const navigate= useNavigate()
   return (
-    <BrowserRouter> 
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
+    
+    <ErrorBoundary FallbackComponent={ErrorFallback}  onReset={()=>{
+      navigate("/")
+    }
+        }>
     <header className='header'>
     <nav className='nav container'>
       <Link className='links'  to="/">Home</Link>
@@ -29,7 +33,7 @@ const App = () => {
         <Route path='/errorpage' element={<ErrorPage />}/>
        </Routes>
        </ErrorBoundary>
-    </BrowserRouter>
+   
   )
 }
 

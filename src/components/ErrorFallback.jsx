@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ErrorFallback({ error }) {
+function ErrorFallback({ error, resetErrorBoundary }) {
   const fallbackStyle = {
     display: "flex",
     justifyContent: "center",
@@ -11,9 +11,9 @@ function ErrorFallback({ error }) {
     <div className="fallback">
     <p>Oops! Something is wrong!</p>
     <p style={{ color: "red", maxWidth: "30rem",lineHeight: "28px" }}>{error.message}</p>
-    <button className='test' onClick={() => setError(true)}>Home</button>
-    {/* <button className='test'>Home</button> */}
-    {/* <Link to="/">Home</Link> */}
+    <button className='test' onClick={resetErrorBoundary}>Go Home</button>
+    {/* <button className='test'>Home</button>
+    <Link to="/">Home</Link> */}
   </div>
     </div>
 }
