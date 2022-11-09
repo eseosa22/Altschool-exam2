@@ -21,25 +21,25 @@ const Home = () => {
           <h1>Vite + React</h1>
           <h3>count is {count}</h3>
           <div className="card">
-            <button onClick={() => dispatch ({type: "increment"})}>
+            <button className='btn' onClick={() => dispatch ({type: "increment"})}>
               Increment
             </button>
-            <button onClick={() => dispatch ({type: "decrement"})}>
+            <button className='btn' onClick={() => dispatch ({type: "decrement"})}>
               Decrement
             </button>
-            <button onClick={() => dispatch ({type: "reset"})}>
+            <button className='btn' onClick={() => dispatch ({type: "reset"})}>
               Reset
             </button>
             <input type="number" value={value} onChange={(e) => {
               setValue(e.target.value)
             }}/>
-            <button onClick={() => {
+            <button className='btn' onClick={() => {
               dispatch({type: "set", payload:+value})
             }}>Set</button>
     
           </div>
           <p className="read-the-docs">
-            Click on the Vite and React logos to learn more
+            Click on the buttons to know your count rates!
           </p>
         </div>
   )

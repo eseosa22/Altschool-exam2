@@ -22,5 +22,6 @@ function ErrorPage(){
     </div>
   </>
 }
+// style={{ color: '#7f0994' }}
 
 export default ErrorPage

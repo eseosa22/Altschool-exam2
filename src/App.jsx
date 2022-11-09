@@ -14,14 +14,14 @@ const App = () => {
   return (
     <BrowserRouter> 
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-    <div className='container'>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/customcounter">Custom Counter</Link>
-      <Link to="/errortest">Error Boundary</Link>
-      <Link to="/errorpage">404 Page</Link>
+    <header className='header'>
+    <nav className='nav container'>
+      <Link className='links'  to="/">Home</Link>
+      <Link className='links' to="/customcounter">Custom Counter</Link>
+      <Link className='links' to="/errortest">Error Boundary</Link>
+      <Link className='links' to="/errorpage">404 Page</Link>
     </nav>
-    </div>
+    </header>
        <Routes>
         <Route path='/' element={<Home />}/> 
         <Route path='/customcounter' element={<Counter />}/>
